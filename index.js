@@ -45,20 +45,21 @@ searchForm.addEventListener('submit',(e) =>{
 
        let allImages =document.querySelectorAll('.single')
 
-       //console.log(allImages)
+      // console.log(allImages)
 
        allImages.forEach(image =>{
         
-       
+       //console.log(image)
 
       image.addEventListener('click', (e)=>{
-        //console.log(e.target.id)
+       let id = parseInt(e.target.parentElement.id)
+       
 
-        let found = images.find(im => im['id'] === e.target.id)
+        let found = images.find(im => im['id'] === id)
 
         
 
-        console.log(e.target)
+       // console.log(found)
 
         let modal = 
          ` <div>
@@ -70,7 +71,7 @@ searchForm.addEventListener('submit',(e) =>{
 
   </div>
   `
-      searchResult.innerHTML = modal
+     searchResult.innerHTML = modal
       })
        })
 
